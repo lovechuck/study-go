@@ -6,7 +6,7 @@
 
 ## GO 语言编程基础
 - 语言基础 
-- 语法（Language Syntax）
+- 变量和基本类型（Language Syntax）
 - 数据类型（Arrays, Slices and Maps）
 - 流程控制（if/else，for/range）
 - Go 函数（Function）
