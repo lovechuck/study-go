@@ -6,13 +6,14 @@
 
 ## GO 语言编程基础
 - 语言基础 
-- 变量和基本类型（Language Syntax）
+- 变量和基本类型（Bool, Number and String）
 - 数据类型（Arrays, Slices and Maps）
 - 流程控制（if/else，for/range）
-- Go 函数（Function）
+- 函数（Function）
+- 结构体（Struct）
 - 面向对象（Methods, Interfaces and Embedding）
 - 包处理（Packaging and Exporting）
-- Go 指针（Using Pointers）
+- 指针（Using Pointers）
 - 程序测试（Testing and Debugging）
 - 对象合成（Composition）
 - 错误处理（Error Handling）
