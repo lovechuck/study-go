@@ -90,6 +90,69 @@ func testMap() {
 	fmt.Println(age)
 }
 
+/*
+测试If
+*/
+func testIf() {
+	num := 10
+	if num < 10 {
+		fmt.Println(`less than 10`)
+	} else if num == 10 {
+		fmt.Println(`equal 10`)
+	} else {
+		fmt.Println(`more than 10`)
+	}
+}
+
+/*
+测试switch
+*/
+func testSwitch() {
+	i := 12
+	switch {
+	case i < 12:
+		fmt.Println("< 12")
+	case i == 12:
+		fmt.Println("= 12")
+	default:
+		fmt.Println("> 12")
+	}
+}
+
+/*测试for*/
+func testFor() {
+	sum := 0
+	for num := 1; num < 10; num++ {
+		sum += num
+	}
+	fmt.Println(sum)
+
+	for i := 1; i < 10; i++ {
+		if i == 5 {
+			continue
+		}
+		if i == 8 {
+			break
+		}
+		fmt.Println(i)
+	}
+
+	arrs := [5]int{1, 2, 3, 4, 5}
+	for index, item := range arrs {
+		fmt.Println(index, item)
+	}
+
+	slices := []string{"a", "b", "c"}
+	for index, item := range slices {
+		fmt.Println(index, item)
+	}
+
+	maps := map[string]int{"a": 1, "b": 2, "c": 3}
+	for key, val := range maps {
+		fmt.Println(key, val)
+	}
+}
+
 func main() {
 	var name, age = "chuck", 12
 	fmt.Println(name)
@@ -102,4 +165,7 @@ func main() {
 	testArray()
 	testSlice()
 	testMap()
+	testIf()
+	testSwitch()
+	testFor()
 }

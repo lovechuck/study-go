@@ -6,7 +6,9 @@
 
 ## GO 语言编程基础
 - 语言基础 
-- 变量和基本类型（Bool, Number and String）
+- 变量和常量
+- 运算符
+- 基本类型（Bool, Number and String）
 - 数据类型（Arrays, Slices and Maps）
 - 流程控制（if/else，for/range）
 - 函数（Function）
