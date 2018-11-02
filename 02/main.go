@@ -153,6 +153,43 @@ func testFor() {
 	}
 }
 
+/*测试函数*/
+func testFunc(a int, b int) (int, int) {
+	return a + b, a - b
+}
+func testFunc1(a ...int) {
+	fmt.Println(a)
+}
+
+/*测试init*/
+func init() {
+	fmt.Println("init")
+}
+
+/*测试全局变量*/
+var g = 1
+
+func testGlobal() {
+	a := 2
+	b := 3
+	g := a + b
+	fmt.Println(g)
+}
+
+/*测试局部变量*/
+func testLocal() {
+	a := 2
+	b := 3
+	g := a + b
+	fmt.Println(g)
+}
+
+/*测试形势参数*/
+func testParams(g int) {
+	g = g + 1
+	fmt.Println(g)
+}
+
 func main() {
 	var name, age = "chuck", 12
 	fmt.Println(name)
@@ -168,4 +205,12 @@ func main() {
 	testIf()
 	testSwitch()
 	testFor()
+
+	a, b := testFunc(1, 2)
+	fmt.Println(a, b)
+	testFunc1(1, 2, 3, 4)
+
+	testGlobal()
+	testLocal()
+	testParams(1)
 }

@@ -6,12 +6,13 @@
 
 ## GO 语言编程基础
 - 语言基础 
-- 变量和常量
-- 运算符
+- 变量和常量（Variables and Constants）
+- 运算符（Operator）
 - 基本类型（Bool, Number and String）
 - 数据类型（Arrays, Slices and Maps）
 - 流程控制（if/else，for/range）
 - 函数（Function）
+- 变量作用域（Scope）
 - 结构体（Struct）
 - 面向对象（Methods, Interfaces and Embedding）
 - 包处理（Packaging and Exporting）
