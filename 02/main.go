@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"reflect"
 	"strconv"
 	"study-go/02/animal"
 )
@@ -265,6 +266,38 @@ func testErr(num int) (int, error) {
 	return num, nil
 }
 
+/*测试反射*/
+type person struct {
+	Name string
+	Age  int
+}
+
+func (p person) Hello(name []string) {
+	fmt.Println("Hello world! " + name[0])
+}
+
+func testReflect() {
+	o := person{"Jack", 23}
+	t := reflect.TypeOf(o)
+	fmt.Println("Type:", t.Name()) //调用t.Name方法来获取这个类型的名称
+
+	v := reflect.ValueOf(o) //打印出所包含的字段
+	fmt.Println("Fields:")
+	for i := 0; i < t.NumField(); i++ { //通过索引来取得它的所有字段，这里通过t.NumField来获取它多拥有的字段数量，同时来决定循环的次数
+		f := t.Field(i)               //通过这个i作为它的索引，从0开始来取得它的字段
+		val := v.Field(i).Interface() //通过interface方法来取出这个字段所对应的值
+		fmt.Printf("%6s:%v =%v\n", f.Name, f.Type, val)
+	}
+	for i := 0; i < t.NumMethod(); i++ { //这里同样通过t.NumMethod来获取它拥有的方法的数量，来决定循环的次数
+		m := t.Method(i)
+		fmt.Printf("%6s:%v\n", m.Name, m.Type)
+	}
+
+	vm := v.MethodByName("Hello")
+	args := []reflect.Value{reflect.ValueOf([]string{"JOE"})}
+	vm.Call(args)
+}
+
 func main() {
 	var name, age = "chuck", 12
 	fmt.Println(name)
@@ -313,4 +346,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	testReflect()
 }
