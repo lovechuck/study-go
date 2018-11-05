@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
+	"study-go/02/animal"
 )
 
 /*
@@ -190,6 +191,80 @@ func testParams(g int) {
 	fmt.Println(g)
 }
 
+/*测试结构体*/
+type user struct {
+	name string
+	age  int
+	sex  string
+}
+
+func testStruct() {
+	item := user{name: "chuck", age: 12, sex: "1"}
+	fmt.Println(item)
+	fmt.Println(item.name)
+}
+
+/*测试methods*/
+type rectangle struct {
+	width  float64
+	heigth float64
+}
+
+func (receiver rectangle) area() float64 {
+	return receiver.width * receiver.heigth
+}
+
+/*测试接口*/
+type isay interface {
+	say(word string) string
+}
+
+type dog struct {
+	name string
+}
+
+type cat struct {
+	sex string
+}
+
+func (d dog) say(word string) string {
+	return d.name + word
+}
+
+func (c cat) say(word string) string {
+	return "cat=" + word
+}
+
+/*测试指针*/
+func testPointer() {
+	var pi *int
+	var a = 20
+	pi = &a
+
+	fmt.Println(&a)
+	fmt.Println(pi)
+	fmt.Println(*pi)
+
+	var sptr *float64
+	fmt.Println(sptr == nil)
+}
+
+/*测试类型转换*/
+func testCov() {
+	var a = 20
+	var b float32
+	b = float32(a)
+	fmt.Println(b)
+}
+
+/*测试error*/
+func testErr(num int) (int, error) {
+	if num < 0 {
+		return 0, errors.New("错误")
+	}
+	return num, nil
+}
+
 func main() {
 	var name, age = "chuck", 12
 	fmt.Println(name)
@@ -213,4 +288,29 @@ func main() {
 	testGlobal()
 	testLocal()
 	testParams(1)
+
+	testStruct()
+
+	rect := rectangle{heigth: 12, width: 12}
+	area := rect.area()
+	fmt.Println(area)
+
+	var idg, icat isay
+	idg = dog{"dog"}
+	fmt.Println(idg.say("hello"))
+
+	icat = cat{"0"}
+	fmt.Println(icat.say("world"))
+
+	fox := animal.Fox{Name: "fox1"}
+	str := fox.Woo()
+	fmt.Println(str)
+
+	testPointer()
+	testCov()
+
+	_, err := testErr(-1)
+	if err != nil {
+		fmt.Println(err)
+	}
 }

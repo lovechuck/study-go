@@ -14,12 +14,12 @@
 - 函数（Function）
 - 变量作用域（Scope）
 - 结构体（Struct）
-- 面向对象（Methods, Interfaces and Embedding）
+- 面向对象（Methods, Interfaces）
 - 包处理（Packaging and Exporting）
 - 指针（Using Pointers）
-- 程序测试（Testing and Debugging）
-- 对象合成（Composition）
+- 类型转化（Type Conversion）
 - 错误处理（Error Handling）
+- 程序测试（Testing and Debugging）
 - 标准库（Standard Library）
 - 反射（Reflection）
 
