@@ -24,7 +24,4 @@
 - 反射（Reflection）
 
 ## 并发编程
-- Go 并发基础（Concurrency, Race Conditions and Channels）
-- 并发模式（Concurrency Patterns）
-
-
+- 并发
